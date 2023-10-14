@@ -1,18 +1,28 @@
+#add import
 import question_c
-print("We will sum all even numbers from 0 to your input")
-try_again = 'y'
-while try_again == 'y' or try_again == 'Y' or try_again == 'yes' or try_again == 'YES':
+
+def try_again():
+    while True:
+        b = input("Would you like another sum of even numbers? y or n: ")
+        if b == "y" or b == "Y" or b == "yes" or b == "Yes":
+            run_main()
+            break
+        elif b == "n" or b == "N" or b == "no" or b == "No":
+            print("Exiting the program. See ya!")
+            break
+        else:
+            print("Invalid selection. type y or n: ")
+
+def run_main():
     while True:
         try:
-            num = int(input("Enter a number greater than 0: "))
+            num =int(input("Please enter a whole number: "))
             break
         except ValueError:
-            print("Not a WHOLE Number")
-    z = question_c.get_sum_of_evens(num)
-    print (z)
-    try_again = str(input("Enter 'Yes' or 'Y' if you would like to Try Again? "))
-    if try_again == 'y' or try_again == 'Y' or try_again == 'YES' or try_again == 'yes':
-        print("\nYou selected to try again!")
-    else:
-        print("Exiting Program")
-        
+            print("This is not a whole number!")
+    b =(question_c.get_sum_of_evens(num))
+    print(b)
+    try_again()
+
+print("This program will return a sum of all the even numbers up to your chosen value.")
+run_main()
