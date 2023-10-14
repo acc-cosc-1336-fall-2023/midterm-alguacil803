@@ -1,21 +1,20 @@
+#
 def get_day_of_week(day):
-
-    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    
-    if 1 <= day <= 7:
-        return days[day - 1]
+    if day < 1 or day > 7:
+        return("Invalid Number")
+    elif day == 1:
+        return("Monday")
+    elif day == 2:
+        return("Tuesday")
+    elif day == 3:
+        return("Wednesday")
+    elif day == 4:
+        return("Thursday")
+    elif day == 5:
+        return("Friday")
+    elif day == 6:
+        return("Saturday")
+    elif day == 7:
+        return("Sunday")
     else:
-        return "Invalid number. Please enter a number in the range of 1 through 7."
-
-def main():
-    while True:
-        try:
-            day_number = int(input("Enter a number (1 through 7): "))
-            day_of_week = get_day_of_week(day_number)
-            print("Day of the week:", day_of_week)
-        except ValueError:
-            print("Error: Please enter a valid number.")
-        
-        choice = input("Do you want to try again? (yes/no): ").lower()
-        if choice not in ('yes', 'y'):
-            break
+        return("Invalid")
